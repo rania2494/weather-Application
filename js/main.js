@@ -7,6 +7,19 @@ let index = 0
 let currentLocation;
 
 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+
+    }}
+function showPosition(position) {
+    currentLocation = position.coords.latitude + ',' + position.coords.longitude;
+    APIDATA(currentLocation);
+}
+getLocation()
+
+
+
 search.addEventListener('keyup', function () {
     let location = search.value;
      timeArray = []
@@ -15,7 +28,6 @@ search.addEventListener('keyup', function () {
 APIDATA(location);
 }
 )
-
 
 async function APIDATA(location) {
     let myResponce = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=a45713078079429199d142651242606&q=${location}&days=7`)
@@ -123,7 +135,7 @@ function displayHours() {
 
         hourContainer += `<div class="col-2 text-center">
                       <p class="p-0 m-0">${timeArray[i].slice(11,)}</p>
-                      <p class="p-0 m-0"><img src="${statusArray[i]}" alt=""></p>
+                      <p class="p-0 m-0"><img src="https:${statusArray[i]}" alt=""></p>
                       <p>${tempArray[i]}<span><sup> o</sup></span
         ><span> C</span></p>
                     </div>`
@@ -134,24 +146,11 @@ function displayHours() {
 function changeBackGround(weatherData) {
     let body = document.querySelector('body')
     if (weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('sunny') || weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('clear')){
-        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/2.png')"
+        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('images/2.png')"
     } else if (weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('rain') ){
-        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/1.png')"
+        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('images/1.png')"
     } else {
-        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/3.png')"
-        console.log(weatherData.forecast.forecastday[0].day.condition.text)
+        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('images/3.png')"
     }
 }
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-}
-
-function showPosition(position) {
-    currentLocation = position.coords.latitude + ',' + position.coords.longitude;
-    APIDATA(currentLocation);
-
-}
-getLocation()
