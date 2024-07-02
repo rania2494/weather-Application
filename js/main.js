@@ -134,11 +134,11 @@ function displayHours() {
 function changeBackGround(weatherData) {
     let body = document.querySelector('body')
     if (weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('sunny') || weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('clear')){
-        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/2.jfif')"
+        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/2.png')"
     } else if (weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('rain') ){
-        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/1.jfif')"
+        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/1.png')"
     } else {
-        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/3.jfif')"
+        body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/3.png')"
         console.log(weatherData.forecast.forecastday[0].day.condition.text)
     }
 }
