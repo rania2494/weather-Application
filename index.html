@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="header">
+    <header>
+      <nav
+        class="navbar navbar-expand-sm navbar-dark bg-transparent  py-3 mb-2"
+      >
+        <div class="container">
+          <i class="fa-solid fa-rainbow fs-1 text-light"></i>
+
+          <div class="mx-5" >
+            <input
+              class="form-control bg-light bg-opacity-50 text-light border border-2 rounded-pill"
+              placeholder="Search"
+              id="search"
+            />
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-lg-0">
+              <li class="nav-item mx-1">
+                <button class="bg-transparent">
+                  <a
+                    class="nav-link active fs-6 p-0"
+                    href="#"
+                    aria-current="page"
+                    >Home <span class="visually-hidden">(current)</span></a
+                  >
+                </button>
+              </li>
+
+              <li class="nav-item mx-1">
+                <button class="bg-transparent ">
+                  <a class="nav-link text-white fs-6 p-0" href="#">News</a>
+                </button>
+              </li>
+
+              <li class="nav-item mx-1">
+                <button class="bg-transparent ">
+                  <a class="nav-link text-white fs-6 p-0" href="#"
+                    >Live cameras</a
+                  >
+                </button>
+              </li>
+
+              <li class="nav-item mx-1">
+                <button class="bg-transparent ">
+                  <a class="nav-link text-white fs-6 p-0" href="#">Photo</a>
+                </button>
+              </li>
+
+              <li class="nav-item mx-1">
+                <button class="bg-transparent ">
+                  <a class="nav-link text-white fs-6 p-0" href="#">Contact</a>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main class="mt-4 pt-1 d-flex">
+        <div class="container my-auto text-light ">
+          <div class="row g-5">
+            <div class="col-lg-9 px-5">
+              <div class="row gy-5">
+                <div class="col-9 bg-light bg-opacity-25 border border-0 rounded-5
+                 shadow-lg p-4">
+                  <div class="row g-3">
+                    <div class="col-7">
+                      <div class=" display-5  pb-3 m-auto" id="location"></div>
+                      <div class="fs-6  px-1 py-2  m-auto" id="currentDay"></div>
+                      <div class="fs-6  px-1 py-2 m-auto" id="currentStatus"></div>
+
+                    </div>
+                    <div class="col-5">
+                        <div
+                          class="m-auto d-flex flex-column justify-content-around"
+                        >
+                          <div >
+                            <div class=" py-1" >
+                              <span class=" fs-1">
+                                <span id="currentTemp"></span>
+                                <span><sup> o</sup></span
+                                ><span> C</span>
+                                
+                                   <img
+                                src=""
+                                alt=""
+                                id="currentIcon"
+                                class="imgsize"
+                              />
+                            </span>
+                            </div>
+                            <div class=" py-1">
+                              <span class=" fs-6 ps-3 ">
+                                <span id="currentmaxTemp"></span
+                                ><span><sup> o</sup></span
+                                ><span> C</span></span
+                              >
+                              <span> /</span>
+                              <span class="fs-6"
+                                ><span id="currentminTemp"></span
+                                ><span><sup> o</sup></span
+                                ><span> C</span></span
+                              >
+                            </div>
+                            <div class=" fs-6 py-3 ">
+                              <span class="me-3"
+                                ><span class="px-2" id="humidity"></span
+                                ><i class="fa-solid fa-droplet"></i
+                              ></span>
+                              <span class="ms-3"
+                                ><span class="px-2" id="wind"></span
+                                ><i class="fa-solid fa-wind"></i
+                              ></span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 bg-light bg-opacity-25 border border-0 rounded-5 shadow-lg p-2">
+                  <div class="row" id="hours"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-5 text-center bg-light bg-opacity-25 border border-0 rounded-5 shadow-lg p-2 mt-5 mx-auto" id="days"></div>
+          </div>
+        </div>
+      </main>
+    </header>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

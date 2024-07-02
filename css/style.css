@@ -1,0 +1,29 @@
+body {
+
+    font-family:cursive;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+}
+
+button{
+    border: 2px  solid  transparent;
+    padding: 0px 15px;
+    border-radius: 25px;
+
+}
+button:hover{
+    border: 2px  solid  #009ad8;
+}
+
+img
+{
+    width:50px
+}
+#days img{
+    width: 60px;
+}
+#hours img{
+    width: 80px;
+}
+
