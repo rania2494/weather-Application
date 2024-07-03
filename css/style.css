@@ -41,5 +41,7 @@ margin:auto ;
     font-size: calc(2rem + 1.5vw) !important;
 
 }
-
+.w-100{
+    width: 75% !important;
+}
 }
