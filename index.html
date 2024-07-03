@@ -52,13 +52,7 @@
                 </button>
               </li>
 
-              <li class="nav-item mx-1">
-                <button class="bg-transparent ">
-                  <a class="nav-link text-white fs-6 p-0" href="#"
-                    >Live cameras</a
-                  >
-                </button>
-              </li>
+
 
               <li class="nav-item mx-1">
                 <button class="bg-transparent ">
@@ -80,9 +74,8 @@
         <div class="container my-auto text-light ">
           <div class="row g-5">
             <div class="col-lg-9 px-5">
-              <div class="row gy-5">
-                <div class="col-9 bg-light bg-opacity-25 border border-0 rounded-5
-                 shadow-lg p-4">
+                <div class="w-75 mb-5 bg-light bg-opacity-25 border border-0 rounded-5
+                 shadow-lg p-4" id="main">
                   <div class="row g-3">
                     <div class="col-7">
                       <div class=" display-5  pb-3 m-auto" id="location"></div>
@@ -105,7 +98,6 @@
                                 src=""
                                 alt=""
                                 id="currentIcon"
-                                class="imgsize"
                               />
                             </span>
                             </div>
@@ -123,12 +115,12 @@
                               >
                             </div>
                             <div class=" fs-6 py-3 ">
-                              <span class="me-3"
-                                ><span class="px-2" id="humidity"></span
+                              <span class="me-2"
+                                ><span class="px-1" id="humidity"></span
                                 ><i class="fa-solid fa-droplet"></i
                               ></span>
-                              <span class="ms-3"
-                                ><span class="px-2" id="wind"></span
+                              <span class="ms-2"
+                                ><span class="px-1" id="wind"></span
                                 ><i class="fa-solid fa-wind"></i
                               ></span>
                             </div>
@@ -137,12 +129,15 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12 bg-light bg-opacity-25 border border-0 rounded-5 shadow-lg p-2">
+
+
+                <div class="mt-5 bg-light bg-opacity-25 border border-0 rounded-5 shadow-lg p-2">
                   <div class="row" id="hours"></div>
                 </div>
-              </div>
+
+
             </div>
-            <div class="col-lg-3 col-5 text-center bg-light bg-opacity-25 border border-0 rounded-5 shadow-lg p-2 mt-5 mx-auto" id="days"></div>
+            <div class="col-lg-3 col-8 text-center bg-light bg-opacity-25 border border-0 rounded-5 shadow-lg p-2 mt-5 mb-2 mx-auto" id="days"></div>
           </div>
         </div>
       </main>

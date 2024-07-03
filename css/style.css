@@ -26,4 +26,20 @@ img
 #hours img{
     width: 80px;
 }
+@media only screen and (max-width: 992px) {
 
+#main{
+margin:auto ;
+}
+.display-5{
+    font-size: calc(2rem + 2.1vw);
+}
+.fs-6{
+    font-size: 1.5rem !important;
+}
+.fs-1{
+    font-size: calc(2rem + 1.5vw) !important;
+
+}
+
+}

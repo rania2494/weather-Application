@@ -9,12 +9,32 @@ let currentLocation;
 
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition ,showError );
+        console.log(currentLocation)
 
-    }}
+    } else {
+        APIDATA('cairo');
+        console.log(currentLocation)
+
+    }
+}
+
 function showPosition(position) {
     currentLocation = position.coords.latitude + ',' + position.coords.longitude;
-    APIDATA(currentLocation);
+    APIDATA(currentLocation != undefined ? currentLocation : 'cairo');
+    console.log(currentLocation)
+
+}
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+        case error.POSITION_UNAVAILABLE:
+        case error.TIMEOUT:
+        case error.UNKNOWN_ERROR:
+            APIDATA('cairo');
+            console.log(currentLocation)
+            break;
+    }
 }
 getLocation()
 
@@ -22,10 +42,10 @@ getLocation()
 
 search.addEventListener('keyup', function () {
     let location = search.value;
-     timeArray = []
- tempArray = []
- statusArray = []
-APIDATA(location);
+    timeArray = []
+    tempArray = []
+    statusArray = []
+    APIDATA(location);
 }
 )
 
@@ -54,7 +74,6 @@ function findCurrentIndex(weatherData, currentHour) {
 
 function hoursChange(index, weatherData) {
     for (let i = index; i < 24; i = i + 4) {
-        console.log(weatherData.forecast.forecastday[0].hour[i].time, " ", weatherData.forecast.forecastday[0].hour[i].temp_c)
         timeArray.push(weatherData.forecast.forecastday[0].hour[i].time);
         statusArray.push(weatherData.forecast.forecastday[0].hour[i].condition.icon);
         tempArray.push(weatherData.forecast.forecastday[0].hour[i].temp_c);
@@ -103,7 +122,7 @@ function displayDays(weatherData) {
         let dayIcon = weatherData.forecast.forecastday[i].day.condition.icon;
         let daydateNum = new Date(weatherData.forecast.forecastday[i].date);
         let daydateString = daydateNum.toDateString().slice(0, 4);
-        days += `<div class="p-2 row">
+        days += `<div class="p-2  row">
                 <div class='col-2 m-auto'>${daydateString}</div>
 
         <div class='col-3'><img src="https:${dayIcon}" alt=""></div>
@@ -145,9 +164,9 @@ function displayHours() {
 
 function changeBackGround(weatherData) {
     let body = document.querySelector('body')
-    if (weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('sunny') || weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('clear')){
+    if (weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('sunny') || weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('clear')) {
         body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('images/2.png')"
-    } else if (weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('rain') ){
+    } else if (weatherData.forecast.forecastday[0].day.condition.text.toLowerCase().includes('rain')) {
         body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('images/1.png')"
     } else {
         body.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('images/3.png')"
